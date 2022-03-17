@@ -12,7 +12,7 @@ jobs:
           node -v
           cat /etc/os-release  
 
-  deploy:
+  sre-toolbox-docker:
     runs-on: ubuntu-20.04
     container: 
       image: pcloud/sre-toolbox:0.2
