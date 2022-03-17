@@ -7,7 +7,18 @@ jobs:
     container:
       image: node:14.15.0-alpine3.12
     steps:
-         - name: Log the node version
-           run: |
-             node -v
-             cat /etc/os-release  
+      - name: Log the node version
+        run: |
+          node -v
+          cat /etc/os-release  
+
+  deploy:
+    runs-on: ubuntu-20.04
+    container: 
+      image: pcloud/sre-toolbox:0.2
+    steps:
+      - name: Log tool versions
+        run: |
+          kubectl version
+          helm version
+          gomplate -v
